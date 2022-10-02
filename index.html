@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="Verport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
@@ -223,7 +223,7 @@
 
 
     <script>
-let modalClasses = ['modal-dialog-top-right'
+    let modalClasses = ['modal-dialog-top-right'
       , 'modal-dialog-top'
       , 'modal-dialog-top-left'
       , 'modal-dialog-left'
@@ -233,6 +233,7 @@ let modalClasses = ['modal-dialog-top-right'
       , 'modal-dialog-right'
       , 'modal-dialog-center'];
       function lanzarModal(modalAction){
+        $("#setClass").removeClass();
         let setModalClass = modalClasses[Math.floor(Math.random() * modalClasses.length)];
         if (modalAction === 'show') {        
         console.log(setModalClass);
@@ -243,9 +244,7 @@ let modalClasses = ['modal-dialog-top-right'
           $("#setClass").removeClass(setModalClass);
         }        
       }
-      setInterval(function () {
-        lanzarModal('show')
-      }, 60000);
+      setInterval(function () {lanzarModal('show')}, 60000);
 
       setInterval(function () {
         lanzarModal('hide')
